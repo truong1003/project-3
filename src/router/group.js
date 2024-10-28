@@ -1,0 +1,17 @@
+const express = require('express')
+const router = express.Router()
+const GroupController = require('../controller/groupController')
+const Auth = require('../middleware/authUser')
+
+router.get('/',GroupController.getGroup)
+router.post('/create',Auth.requireAuth,GroupController.createGroup)
+router.patch('/update/:id',Auth.requireAuth,GroupController.updateGroup)
+router.delete('/delete/:id',Auth.requireAuth,GroupController.deleteGroup)
+router.post('/join/:id',Auth.requireAuth,GroupController.joinGroup)
+router.patch('/accept/:id',Auth.requireAuth,GroupController.acceptJoin)
+router.patch('/unaccept/:id',Auth.requireAuth,GroupController.unacceptJoin)
+router.patch('/manager/:id',Auth.requireAuth,GroupController.addManager)
+router.patch('/remove/:group_id/:user_id',Auth.requireAuth,GroupController.removeManager)
+router.get('/members/:id',GroupController.getMembers)
+router.patch('/removeuser/:group_id/:user_id',Auth.requireAuth,GroupController.removeMember)
+module.exports = router

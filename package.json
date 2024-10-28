@@ -1,11 +1,26 @@
 {
   "name": "social",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "nodemon src/server.js"
   },
   "author": "",
   "license": "ISC",
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "body-parser": "^1.20.3",
+    "class-validator": "^0.14.1",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "express": "^4.21.0",
+    "helmet": "^7.1.0",
+    "hpp": "^0.2.3",
+    "http-errors": "^2.0.0",
+    "md5": "^2.3.0",
+    "mongoose": "^8.6.3",
+    "morgan": "^1.10.0",
+    "nodemon": "^3.1.6"
+  }
 }
